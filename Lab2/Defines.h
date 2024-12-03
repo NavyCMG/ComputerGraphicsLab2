@@ -98,7 +98,7 @@ struct Cube //color green
 {
 	float local[4][4]{ {1,0,0,0},{0,1,0,0},{0,0,1,0},{0,0,0,1} };;
 	//total size should go from -.25 to .25
-	std::vector<Vertex> vertsOrig{ 
+	std::vector<Vertex> vertsOrig{ //positions of the points of the cube to use for start and end points of the lines
 		Vertex(-.25, .25, .25, 1, 0xff00ff00),	//top left close	sub 0
 		Vertex(-.25, .25, -.25, 1, 0xff00ff00), //top left far		sub 1
 		Vertex(.25, .25, .25, 1, 0xff00ff00),	//top right close	sub 2
@@ -119,7 +119,7 @@ struct Cube //color green
 		Vertex(.25, -.25, -.25, 1, 0xff00ff00)  //bottom right far	sub 7
 	};
 };
-struct Camera
+struct Camera //used for math for moving the viewing port away from origin and rasterizing the 3d objects to a 2d screen
 {
 	float local[4][4]{ {1,0,0,0},{0,1,0,0},{0,0,1,0},{0,0,0,1} };
 	float inverse[4][4]{ {1,0,0,0},{0,1,0,0},{0,0,1,0},{0,0,0,1} };

@@ -10,7 +10,7 @@ void DrawPxl(int currentPos, unsigned int newColor)
 	}
 }
 
-void LinePara(Point2D start, Point2D end, unsigned int color)
+void LinePara(Point2D start, Point2D end, unsigned int color) //Draws a line between the start and end point of the chosen color
 {
 	int curX = start.x;
 	int curY = start.y;
@@ -25,7 +25,7 @@ void LinePara(Point2D start, Point2D end, unsigned int color)
 	}
 }
 
-Point2D NDCtoScreen(Vertex v)
+Point2D NDCtoScreen(Vertex v) //Changes a 3d point in space, aka the vertex, into a 2d point on screen
 {
 	Point2D result;
 	result.x = (v.xyzw[0] + 1) * (screenWidth / 2);
@@ -33,7 +33,7 @@ Point2D NDCtoScreen(Vertex v)
 	return result;
 }
 
-void DrawGrid(Grid g, Camera* c)
+void DrawGrid(Grid g, Camera* c) //Draws the grid the cube is on
 {
 	for (int i = 0; i < g.tops.size(); ++i)
 	{
@@ -45,7 +45,7 @@ void DrawGrid(Grid g, Camera* c)
 	}
 }
 
-void DrawCube(Cube c, Camera* cam)
+void DrawCube(Cube c, Camera* cam) //Draws the cube
 {
 	LinePara(NDCtoScreen(VertShader(c.vertsChange[0], c.local, cam)), NDCtoScreen(VertShader(c.vertsChange[2], c.local, cam)), c.vertsChange[0].color);
 	LinePara(NDCtoScreen(VertShader(c.vertsChange[0], c.local, cam)), NDCtoScreen(VertShader(c.vertsChange[1], c.local, cam)), c.vertsChange[0].color);

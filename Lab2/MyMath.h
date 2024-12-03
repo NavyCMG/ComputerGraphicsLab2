@@ -1,6 +1,8 @@
 #pragma once
 #include "Defines.h"
 
+//absolutely awful custom math library that intentionally does things in a ridiculous way so I didnt get hit for plagarism
+
 unsigned int Lerp(unsigned int start,unsigned int end, float ratio = -1)
 {
 	if (ratio == -1)

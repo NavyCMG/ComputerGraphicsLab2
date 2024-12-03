@@ -39,7 +39,7 @@ int main()
 		DrawGrid(g, &cam);
 		DrawCube(c, &cam);
 
-		if (elapTime > .033)
+		if (elapTime > .033) //manages the cubes rotation speed relative to time, framerate would be way too fast here
 		{
 			RotateCubeY(1, &c);
 			elapTime -= .033;

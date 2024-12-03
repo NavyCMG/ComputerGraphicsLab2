@@ -12,7 +12,7 @@ void TranslateCube(Cube *c, float x = 0, float y = 0, float z = 0)
 	}
 }
 
-void RotateCubeY(float deg, Cube *c)
+void RotateCubeY(float deg, Cube *c) //responsible for doing the math for rotating the cube in space
 {
 	double rad = deg * (pi / 180);
 	float yRot[4][4]{ {std::cos(rad), 0, std::sin(rad), 0}, {0,1,0,0}, {-std::sin(rad), 0, std::cos(rad), 0}, {0,0,0,1} };
